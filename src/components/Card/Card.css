@@ -39,6 +39,7 @@
 	height: 58px;
 	border-left: 4px solid var(--border-blue);
 	transform: translate(-21px, -11px) rotate(45deg);
+	z-index: 1;
 }
 
 .card__header-text {
