@@ -1,0 +1,227 @@
+.card {
+	position: relative;
+	min-width: 320px;
+	min-height: 480px;
+	margin-bottom: 40px;
+	font-family: 'Trebuchet MS', sans-serif;
+	color: black;
+}
+
+.card::before {
+	position: absolute;
+	content: '';
+	left: 0;
+	top: 0;
+	border-bottom: 43px solid var(--bg-card);
+	border-left: 43px solid transparent;
+}
+
+.card__container {
+	cursor: pointer;
+}
+
+.card__header {
+	position: relative;
+	height: 42px;
+	margin-left: 41px;
+	background-color: var(--bg-card);
+	border-top: 4px solid var(--border-blue);
+	border-right: 4px solid var(--border-blue);
+	border-top-right-radius: 12px;
+}
+
+.card__header::before {
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 58px;
+	border-left: 4px solid var(--border-blue);
+	transform: translate(-21px, -11px) rotate(45deg);
+}
+
+.card__header-text {
+	margin-top: 17px;
+	margin-left: 8px;
+	font-size: 16px;
+	line-height: 19px;
+	color: #666666;
+}
+
+.card__inner {
+	position: relative;
+	height: calc(480px - 41px);
+	margin-top: -1px;
+	padding-left: 44px;
+	background-color: var(--bg-card);
+	border-left: 4px solid var(--border-blue);
+	border-right: 4px solid var(--border-blue);
+	border-bottom: 4px solid var(--border-blue);
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+	overflow: hidden;
+}
+
+.card__inner::before {
+	position: absolute;
+	content: '';
+	left: -35px;
+	top: 168px;
+	width: 368px;
+	height: 360px;
+	background-image: url('../../assets/cat.png');
+	background-repeat: no-repeat;
+}
+
+.card__inner:hover .card__header:hover {
+	border-color: var(--border-pink);
+}
+
+.card__title {
+	margin: 5px 0 0;
+	font-weight: 700;
+	font-size: 48px;
+	line-height: 56px;
+}
+.card__subtitle {
+	margin: 0 0 15px;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 28px;
+}
+.card__promo {
+	font-size: 14px;
+	line-height: 16px;
+	color: #666666;
+}
+
+.card__circle {
+	position: absolute;
+	right: 12px;
+	bottom: 12px;
+	height: 80px;
+	width: 80px;
+	text-align: center;
+	border-radius: 50%;
+	background-color: var(--border-blue);
+	color: white;
+}
+
+.card__weight {
+	padding-top: 20px;
+	font-size: 42px;
+	line-height: 22px;
+}
+
+.card__kg {
+	padding-top: 7px;
+	font-size: 21px;
+	line-height: 22px;
+}
+
+.card__description {
+	margin-top: 14px;
+	text-align: center;
+	font-size: 13px;
+	line-height: 15px;
+	color: white;
+}
+.card__description_action {
+	cursor: pointer;
+	border-bottom: 1px dashed var(--border-blue);
+	color: var(--border-blue);
+}
+.card__description_disabled {
+	color: #ffff66;
+}
+
+/* ------- HOVER default ------- */
+.hovered .card__header {
+	border-color: var(--border-blue-hover);
+}
+.hovered .card__header::before {
+	border-color: var(--border-blue-hover);
+}
+.hovered .card__inner {
+	border-color: var(--border-blue-hover);
+}
+.hovered .card__circle {
+	background-color: var(--border-blue-hover);
+}
+
+/* -------  Selected ------- */
+.card.selected .card__container .card__header {
+	border-color: var(--border-pink);
+}
+.card.selected .card__container .card__header::before {
+	border-color: var(--border-pink);
+}
+.card.selected .card__container .card__inner {
+	border-color: var(--border-pink);
+}
+.card.selected .card__container .card__circle {
+	background-color: var(--border-pink);
+}
+
+/* -------  Disabled ------- */
+.card.disabled .card__container {
+	cursor: default;
+	color: #b3b3b3;
+	pointer-events: none;
+}
+.card.disabled .card__container .card__header {
+	border-color: var(--border-disabled);
+}
+.card.disabled .card__container .card__header-text {
+	border-color: var(--border-disabled);
+	color: #b3b3b3;
+}
+.card.disabled .card__container .card__header::before {
+	border-color: var(--border-disabled);
+}
+.card.disabled .card__container .card__inner {
+	border-color: var(--border-disabled);
+}
+.card.disabled .card__container .card__inner::before {
+	opacity: 0.5;
+}
+.card.disabled .card__container .card__circle {
+	background-color: #979797;
+}
+.card.disabled .card__container .card__promo {
+	color: #b3b3b3;
+}
+
+/* -------  HOVER selected ------- */
+
+.card.selected .card__container.hovered .card__header {
+	border-color: var(--border-pink-hover);
+}
+.card.selected .card__container.hovered .card__header::before {
+	border-color: var(--border-pink-hover);
+}
+.card.selected .card__container.hovered .card__header-text {
+	color: var(--border-pink-hover);
+}
+.card.selected .card__container.hovered .card__inner {
+	border-color: var(--border-pink-hover);
+}
+.card.selected .card__container.hovered .card__circle {
+	background-color: var(--border-pink-hover);
+}
+
+@media screen and (min-width: 768px) {
+	.card {
+		margin-right: 40px;
+	}
+	.card:last-child {
+		margin-right: 0;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.card {
+		margin-right: 80px;
+	}
+}

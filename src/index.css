@@ -1,13 +1,26 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+	margin: 0;
+	box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+	--border-blue: #1698d9;
+	--border-blue-hover: #2ea8e6;
+	--border-pink: #d91667;
+	--border-pink-hover: #e52e7a;
+	--bg-card-disabled: #b3b3b3;
+	--bg-card: #f2f2f2;
+}
+html {
+	background-image: url('/src/assets/Pattern.png');
+}
+body {
+	color: white;
+	background: linear-gradient(
+		180deg,
+		rgba(0, 0, 0, 0.5) 0%,
+		rgba(0, 0, 0, 5e-5) 49.88%,
+		rgba(0, 0, 0, 0.5) 100%
+	);
+	min-height: 100vh;
 }
